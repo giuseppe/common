@@ -477,7 +477,7 @@ func (c *Config) Ulimits() []string {
 func (c *Config) PidsLimit() int64 {
 	if unshare.IsRootless() {
 		cgroup2, _ := cgroupv2.Enabled()
-		if cgroup2 {
+		if cgroup2 && c.Engine.CgroupManager == SystemdCgroupsManager {
 			return c.Containers.PidsLimit
 		} else {
 			return 0
