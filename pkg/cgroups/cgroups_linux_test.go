@@ -12,7 +12,7 @@ import (
 	"testing"
 
 	"github.com/containers/storage/pkg/unshare"
-	"github.com/opencontainers/cgroups"
+	"github.com/opencontainers/runc/libcontainer/configs"
 )
 
 func TestCreated(t *testing.T) {
@@ -21,7 +21,7 @@ func TestCreated(t *testing.T) {
 		return
 	}
 
-	var resources cgroups.Resources
+	var resources configs.Resources
 	cgr, err := New("machine.slice", &resources)
 	if err != nil {
 		t.Fatal(err)
@@ -45,15 +45,15 @@ func TestResources(t *testing.T) {
 		return
 	}
 
-	wtDevices := []*cgroups.WeightDevice{}
-	devices := []*cgroups.ThrottleDevice{}
-	dev1 := cgroups.NewThrottleDevice(1, 3, 2097152)
-	dev2 := cgroups.NewThrottleDevice(3, 10, 2097152)
-	dev3 := cgroups.NewWeightDevice(5, 9, 500, 0)
+	wtDevices := []*configs.WeightDevice{}
+	devices := []*configs.ThrottleDevice{}
+	dev1 := configs.NewThrottleDevice(1, 3, 2097152)
+	dev2 := configs.NewThrottleDevice(3, 10, 2097152)
+	dev3 := configs.NewWeightDevice(5, 9, 500, 0)
 	devices = append(devices, dev1, dev2)
 	wtDevices = append(wtDevices, dev3)
 
-	var resources cgroups.Resources
+	var resources configs.Resources
 	resources.CpuPeriod = 100000
 	resources.CpuQuota = 100000
 	resources.CpuShares = 100
@@ -151,8 +151,8 @@ func TestResources(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	resources.BlkioThrottleReadBpsDevice = []*cgroups.ThrottleDevice{devices[0]}
-	resources.BlkioThrottleWriteBpsDevice = []*cgroups.ThrottleDevice{devices[1]}
+	resources.BlkioThrottleReadBpsDevice = []*configs.ThrottleDevice{devices[0]}
+	resources.BlkioThrottleWriteBpsDevice = []*configs.ThrottleDevice{devices[1]}
 	resources.BlkioWeightDevice = wtDevices
 
 	// machine.slice = parent, libpod_pod_ID = path
