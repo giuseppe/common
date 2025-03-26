@@ -6,6 +6,7 @@ go 1.23.0
 
 require (
 	github.com/BurntSushi/toml v1.5.0
+	github.com/bytedance/sonic v1.13.3-0.20250326071816-1b6ac947a802
 	github.com/checkpoint-restore/checkpointctl v1.3.0
 	github.com/checkpoint-restore/go-criu/v7 v7.2.0
 	github.com/containerd/platforms v0.2.1
@@ -24,7 +25,6 @@ require (
 	github.com/godbus/dbus/v5 v5.1.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/jinzhu/copier v0.4.0
-	github.com/json-iterator/go v1.1.12
 	github.com/moby/sys/capability v0.4.0
 	github.com/onsi/ginkgo/v2 v2.23.3
 	github.com/onsi/gomega v1.36.3
@@ -60,7 +60,9 @@ require (
 	github.com/VividCortex/ewma v1.2.0 // indirect
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
+	github.com/bytedance/sonic/loader v0.2.4 // indirect
 	github.com/chzyer/readline v1.5.1 // indirect
+	github.com/cloudwego/base64x v0.1.5 // indirect
 	github.com/containerd/cgroups/v3 v3.0.5 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/errdefs/pkg v0.3.0 // indirect
@@ -100,7 +102,9 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
+	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
+	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/letsencrypt/boulder v0.0.0-20240620165639-de9c06129bec // indirect
@@ -133,6 +137,7 @@ require (
 	github.com/syndtr/gocapability v0.0.0-20200815063812-42c35b437635 // indirect
 	github.com/tchap/go-patricia/v2 v2.3.2 // indirect
 	github.com/titanous/rocacheck v0.0.0-20171023193734-afe73141d399 // indirect
+	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ulikunitz/xz v0.5.12 // indirect
 	github.com/vbatts/tar-split v0.12.1 // indirect
 	github.com/vbauerster/mpb/v8 v8.9.3 // indirect
@@ -143,6 +148,7 @@ require (
 	go.opentelemetry.io/otel v1.32.0 // indirect
 	go.opentelemetry.io/otel/metric v1.32.0 // indirect
 	go.opentelemetry.io/otel/trace v1.32.0 // indirect
+	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/exp v0.0.0-20250103183323-7d7fa50e5329 // indirect
 	golang.org/x/net v0.37.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
