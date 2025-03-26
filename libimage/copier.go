@@ -25,6 +25,7 @@ import (
 	"github.com/containers/image/v5/types"
 	encconfig "github.com/containers/ocicrypt/config"
 	"github.com/containers/storage"
+	"github.com/goccy/go-json"
 	"github.com/sirupsen/logrus"
 )
 

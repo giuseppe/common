@@ -15,6 +15,7 @@ import (
 	"github.com/containers/storage/pkg/reexec"
 	"github.com/containers/storage/pkg/system"
 	"github.com/containers/storage/pkg/unshare"
+	"github.com/goccy/go-json"
 )
 
 type applyLayerResponse struct {
@@ -97,9 +98,6 @@ func applyLayerHandler(dest string, layer io.Reader, options *archive.TarOptions
 		if unshare.IsRootless() {
 			options.InUserNS = true
 		}
-	}
-	if options.ExcludePatterns == nil {
-		options.ExcludePatterns = []string{}
 	}
 
 	data, err := json.Marshal(options)
